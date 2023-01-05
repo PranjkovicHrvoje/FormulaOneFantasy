@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Drivers>>, t: Throwable) {
-                    Log.e("Main Activity", t.message.toString())
+                    Log.e("Main Activity Error", t.message.toString())
                 }
             }
             )
