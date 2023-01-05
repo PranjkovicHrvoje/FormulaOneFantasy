@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Formula One Fantasy</string>
+    <string name="header_text">Formula One Fantasy</string>
+    <string name="input_driver">Input Driver Name</string>
+    <string name="select">SELECT</string>
+    <string name="points">Points:</string>
+    <string name="your_profile">YOUR PROFILE</string>
+    <string name="date">Date:</string>
+    <string name="input_nickname">Input your nickname</string>
+    <string name="input">INPUT</string>
+</resources>

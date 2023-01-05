@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:autoText="false"
+        android:background="@drawable/rounded_corner_view_top"
+        android:text="@string/header_text"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#1B1A1A"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toStartOf="@+id/f1_logo_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/f1_logo_icon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/headerTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/f_one_logo_icon"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/driverList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDriver" />
+
+    <TextView
+        android:id="@+id/bottomTextView"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:background="@drawable/rounded_corner_view_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/inputDriverButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/input_icon"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="@+id/bottomTextView"
+        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+
+    <ImageButton
+        android:id="@+id/calendarButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/calendar_icon"
+        app:layout_constraintStart_toEndOf="@+id/inputDriverButton"
+        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+
+    <ImageButton
+        android:id="@+id/standingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/standings_icon"
+        app:layout_constraintStart_toEndOf="@+id/calendarButton"
+        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/profile_icon"
+        app:layout_constraintStart_toEndOf="@+id/standingsButton"
+        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+
+    <EditText
+        android:id="@+id/inputDriver"
+        android:layout_width="246dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/input_driver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+
+    <Button
+        android:id="@+id/selectDriverButton"
+        android:layout_width="98dp"
+        android:layout_height="54dp"
+        android:text="@string/select"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputDriver"
+        app:layout_constraintTop_toBottomOf="@+id/f1_logo_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
