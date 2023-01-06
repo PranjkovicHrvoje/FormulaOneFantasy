@@ -5,43 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/driverItemBackground"
+        android:background="@drawable/background_rounded_edges"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/driverPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/driverItemBackground"
+        app:layout_constraintStart_toStartOf="@+id/driverItemBackground"
+        app:layout_constraintTop_toTopOf="@+id/driverItemBackground"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
         android:id="@+id/driverName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
         android:text="TextView"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/driverPhoto"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/driverPhoto" />
 
     <TextView
         android:id="@+id/driverBirthday"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:text="TextView"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/driverPhoto"
         app:layout_constraintTop_toBottomOf="@+id/driverName" />
 
     <TextView
         android:id="@+id/driverCountry"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:text="TextView"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/driverPhoto"
         app:layout_constraintTop_toBottomOf="@+id/driverBirthday" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
