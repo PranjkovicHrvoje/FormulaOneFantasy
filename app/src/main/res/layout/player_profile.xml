@@ -18,7 +18,9 @@
         android:id="@+id/yourProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/your_profile"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/profileBackground"
@@ -27,10 +29,11 @@
     <TextView
         android:id="@+id/playerNickname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:text="TextView"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/profileBackground"
         app:layout_constraintTop_toBottomOf="@+id/yourProfile" />
@@ -38,10 +41,11 @@
     <TextView
         android:id="@+id/player_points"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:text="@string/points"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/profileBackground"
         app:layout_constraintTop_toBottomOf="@+id/playerNickname" />
@@ -49,10 +53,11 @@
     <TextView
         android:id="@+id/_player_points"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="TextView"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/player_points"
         app:layout_constraintTop_toBottomOf="@+id/playerNickname" />
