@@ -7,18 +7,19 @@
 
     <TextView
         android:id="@+id/driverItemBackground"
-        android:background="@drawable/background_rounded_edges"
         android:layout_width="0dp"
-        android:layout_height="180dp"
+        android:layout_height="210dp"
+        android:background="@drawable/background_rounded_edges"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/driverPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-30dp"
         app:layout_constraintBottom_toBottomOf="@+id/driverItemBackground"
         app:layout_constraintStart_toStartOf="@+id/driverItemBackground"
         app:layout_constraintTop_toTopOf="@+id/driverItemBackground"
@@ -36,7 +37,7 @@
         app:layout_constraintTop_toTopOf="@+id/driverPhoto" />
 
     <TextView
-        android:id="@+id/driverBirthday"
+        android:id="@+id/driverTeam"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
@@ -57,6 +58,17 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/driverPhoto"
-        app:layout_constraintTop_toBottomOf="@+id/driverBirthday" />
+        app:layout_constraintTop_toBottomOf="@+id/driverTeam" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#17000000"
+        android:text="@string/select_driver"
+        app:layout_constraintBottom_toBottomOf="@+id/driverItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/driverPhoto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

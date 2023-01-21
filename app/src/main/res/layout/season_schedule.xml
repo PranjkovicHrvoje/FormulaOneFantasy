@@ -15,10 +15,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/track_name"
+        android:id="@+id/event_name"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
         android:textSize="24sp"
@@ -30,13 +30,13 @@
         android:id="@+id/raceDate"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="@string/date"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/seasonScheduleBackground"
-        app:layout_constraintTop_toBottomOf="@+id/track_name" />
+        app:layout_constraintTop_toBottomOf="@+id/event_name" />
 
     <TextView
         android:id="@+id/race_date"
@@ -48,13 +48,13 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/raceDate"
-        app:layout_constraintTop_toBottomOf="@+id/track_name" />
+        app:layout_constraintTop_toBottomOf="@+id/event_name" />
 
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="@string/location"
         android:textSize="24sp"
@@ -63,12 +63,13 @@
         app:layout_constraintTop_toBottomOf="@+id/raceDate" />
 
     <TextView
-        android:id="@+id/race_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/circuit_name"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="TextView"
+        android:textAlignment="viewStart"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/location"

@@ -36,7 +36,7 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/driverList"
+        android:id="@+id/mainRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomTextView"
@@ -63,7 +63,8 @@
         android:background="@drawable/input_icon"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="@+id/bottomTextView"
-        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/calendarButton"
@@ -73,7 +74,8 @@
         android:layout_marginTop="9dp"
         android:background="@drawable/calendar_icon"
         app:layout_constraintStart_toEndOf="@+id/inputDriverButton"
-        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/standingsButton"
@@ -83,7 +85,8 @@
         android:layout_marginTop="9dp"
         android:background="@drawable/standings_icon"
         app:layout_constraintStart_toEndOf="@+id/calendarButton"
-        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/profileButton"
@@ -93,7 +96,8 @@
         android:layout_marginTop="9dp"
         android:background="@drawable/profile_icon"
         app:layout_constraintStart_toEndOf="@+id/standingsButton"
-        app:layout_constraintTop_toBottomOf="@+id/driverList" />
+        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/inputDriver"
