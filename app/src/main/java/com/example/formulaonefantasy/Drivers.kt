@@ -1,10 +1,9 @@
 package com.example.formulaonefantasy
 
 data class Drivers(
-    val driverId: String,
-    val image: String,
-    val GivenName: String,
-    val FamilyName: String,
-    val DateOfBirth: String,
-    val Nationality: String
+    var id: String = "",
+    val image: String? = null,
+    val name: String? = null,
+    val team: String? = null,
+    val country: String? = null
 )

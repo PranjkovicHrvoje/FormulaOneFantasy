@@ -1,12 +1,10 @@
 package com.example.formulaonefantasy
 
 data class Race(
-    val circuitId: String,
-    val circuitName: String,
-    val Location: List<LocationInfo>,
-    val date: String
+    var id: String = "",
+    val name: String? = null,
+    val track: String? = null,
+    val date: String? = null
 )
 
-data class LocationInfo(
-    val country: String
-)
+
