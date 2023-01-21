@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1061778748130",
+    "project_id": "f1fantasyleague",
+    "storage_bucket": "f1fantasyleague.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061778748130:android:2ce9be89c1d2d5125164bb",
+        "android_client_info": {
+          "package_name": "com.example.formulaonefantasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061778748130-54dskias7nfm0gh93fmg003874ppq8s6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpjuFdJvhpsBKB5u7POQW-sirz_pD4BJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061778748130-54dskias7nfm0gh93fmg003874ppq8s6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
