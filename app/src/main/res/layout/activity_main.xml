@@ -38,11 +38,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainRecyclerView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomTextView"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDriver" />
+        app:layout_constraintTop_toBottomOf="@+id/selectDriverButton" />
 
     <TextView
         android:id="@+id/bottomTextView"
@@ -59,11 +58,11 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="9dp"
         android:background="@drawable/input_icon"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomTextView"
         app:layout_constraintStart_toStartOf="@+id/bottomTextView"
-        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/bottomTextView"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -71,10 +70,10 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="9dp"
         android:background="@drawable/calendar_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/inputDriverButton"
-        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/bottomTextView"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -82,10 +81,10 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="9dp"
         android:background="@drawable/standings_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomTextView"
         app:layout_constraintStart_toEndOf="@+id/calendarButton"
-        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/bottomTextView"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -93,10 +92,10 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="9dp"
         android:background="@drawable/profile_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/standingsButton"
-        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/bottomTextView"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
