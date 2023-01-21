@@ -28,14 +28,14 @@ class RaceRecyclerAdapter(val items: ArrayList<Race>):
 
     class RaceViewHolder(itemView: View):
         RecyclerView.ViewHolder(itemView){
-        private val trackName = itemView.findViewById<TextView>(R.id.track_name)
+        private val raceName = itemView.findViewById<TextView>(R.id.event_name)
+        private val trackName = itemView.findViewById<TextView>(R.id.circuit_name)
         private val raceDate = itemView.findViewById<TextView>(R.id.race_date)
-        private val raceLocation = itemView.findViewById<TextView>(R.id.race_location)
 
         fun bind(race: Race){
-            trackName.text = race.circuitName
+            raceName.text = race.name
+            trackName.text = race.track
             raceDate.text = race.date
-            raceLocation.text = race.Location.toString()
         }
     }
 }
