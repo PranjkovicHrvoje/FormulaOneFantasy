@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/player_nickname"
+        android:id="@+id/player_standings_nickname"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="@+id/playerStandingsBackground" />
 
     <TextView
-        android:id="@+id/points"
+        android:id="@+id/playerStandingsPointsStatic"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -37,10 +37,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_nickname" />
+        app:layout_constraintTop_toBottomOf="@+id/player_standings_nickname" />
 
     <TextView
-        android:id="@+id/playerPoints"
+        android:id="@+id/player_standings_points"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="30dp"
@@ -48,7 +48,7 @@
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/points"
-        app:layout_constraintTop_toBottomOf="@+id/player_nickname" />
+        app:layout_constraintStart_toEndOf="@+id/playerStandingsPointsStatic"
+        app:layout_constraintTop_toBottomOf="@+id/player_standings_nickname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

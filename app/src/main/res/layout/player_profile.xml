@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/yourProfile"
+        android:id="@+id/yourProfileStatic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="@+id/profileBackground" />
 
     <TextView
-        android:id="@+id/playerNickname"
+        android:id="@+id/player_profile_nickname"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -36,10 +36,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/profileBackground"
-        app:layout_constraintTop_toBottomOf="@+id/yourProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/yourProfileStatic" />
 
     <TextView
-        android:id="@+id/player_points"
+        android:id="@+id/playerProfilePointsStatic"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
@@ -48,10 +48,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/profileBackground"
-        app:layout_constraintTop_toBottomOf="@+id/playerNickname" />
+        app:layout_constraintTop_toBottomOf="@+id/player_profile_nickname" />
 
     <TextView
-        android:id="@+id/_player_points"
+        android:id="@+id/player_profile_points"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="30dp"
@@ -59,6 +59,6 @@
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/player_points"
-        app:layout_constraintTop_toBottomOf="@+id/playerNickname" />
+        app:layout_constraintStart_toEndOf="@+id/playerProfilePointsStatic"
+        app:layout_constraintTop_toBottomOf="@+id/player_profile_nickname" />
 </androidx.constraintlayout.widget.ConstraintLayout>
