@@ -28,7 +28,7 @@ class RaceRecyclerAdapter(val items: ArrayList<Race>):
 
     class RaceViewHolder(itemView: View):
         RecyclerView.ViewHolder(itemView){
-        private val raceName = itemView.findViewById<TextView>(R.id.event_name)
+        private val raceName = itemView.findViewById<TextView>(R.id.race_name)
         private val trackName = itemView.findViewById<TextView>(R.id.circuit_name)
         private val raceDate = itemView.findViewById<TextView>(R.id.race_date)
 
