@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectDriverButton" />
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
 
     <TextView
         android:id="@+id/bottomTextView"
@@ -97,28 +97,5 @@
         app:layout_constraintStart_toEndOf="@+id/standingsButton"
         app:layout_constraintTop_toTopOf="@+id/bottomTextView"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/inputDriver"
-        android:layout_width="246dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/input_driver"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
-
-    <Button
-        android:id="@+id/selectDriverButton"
-        android:layout_width="98dp"
-        android:layout_height="54dp"
-        android:backgroundTint="#D70000"
-        android:text="@string/select"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inputDriver"
-        app:layout_constraintTop_toBottomOf="@+id/f1_logo_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
