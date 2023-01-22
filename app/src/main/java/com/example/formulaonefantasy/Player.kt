@@ -1,7 +1,7 @@
 package com.example.formulaonefantasy
 
 data class Player(
-    val id: String = "",
-    var nickname: String? = null,
-    var points: Int? = 0
+    var id: String = "",
+    val nickname: String? = null,
+    val points: Int? = null
 )
