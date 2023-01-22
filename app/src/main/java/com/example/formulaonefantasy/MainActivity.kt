@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private val db = Firebase.firestore
     private lateinit var driverRecyclerAdapter: DriverRecyclerAdapter
     private lateinit var raceRecyclerAdapter: RaceRecyclerAdapter
+    private lateinit var playerRecyclerAdapter: PlayerRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     raceRecyclerAdapter = RaceRecyclerAdapter(raceList)
                     recyclerView.apply {
-                        layoutManager=LinearLayoutManager(this@MainActivity)
+                        layoutManager = LinearLayoutManager(this@MainActivity)
                         adapter = raceRecyclerAdapter
                     }
                 }
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     for (data in it.documents){
                         val driver = data.toObject(Drivers::class.java)
                         if(driver != null){
-                            //driver.id = data.id
+                            driver.id = data.id
                             list.add(driver)
                         }
                     }
@@ -69,6 +70,31 @@ class MainActivity : AppCompatActivity() {
                     Log.e("Error getting drivers.", it.message.toString())
                 }
         }
+
+        val viewStandingsButton = findViewById<ImageButton>(R.id.standingsButton)
+        viewStandingsButton.setOnClickListener{
+            db.collection("players")
+                .get()
+                .addOnSuccessListener {
+                    val list : ArrayList<Player> = ArrayList()
+                    for(data in it.documents){
+                        val player = data.toObject(Player::class.java)
+                        if(player != null){
+                            player.id = data.id
+                            list.add(player)
+                        }
+                    }
+                    playerRecyclerAdapter = PlayerRecyclerAdapter(list)
+                    recyclerView.apply{
+                        layoutManager = LinearLayoutManager(this@MainActivity)
+                        adapter = playerRecyclerAdapter
+                    }
+                }
+                .addOnFailureListener{
+                    Log.e("Error getting standings.", it.message.toString())
+                }
+        }
+
 
     }
 }
