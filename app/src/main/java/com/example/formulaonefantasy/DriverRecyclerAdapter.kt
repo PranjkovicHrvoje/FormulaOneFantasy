@@ -14,12 +14,12 @@ class DriverRecyclerAdapter(
     ):RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return PersonViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.driver_item, parent, false))
+        return DriverViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.driver_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
-            is PersonViewHolder ->{
+            is DriverViewHolder ->{
                 holder.bind(items[position])
             }
         }
@@ -29,12 +29,12 @@ class DriverRecyclerAdapter(
         return items.size
     }
 
-    class PersonViewHolder(itemView: View):
+    class DriverViewHolder(itemView: View):
         RecyclerView.ViewHolder(itemView){
-        private val driverImage = itemView.findViewById<ImageView>(R.id.driverPhoto)
-        private val driverName = itemView.findViewById<TextView>(R.id.driverName)
-        private val driverTeam = itemView.findViewById<TextView>(R.id.driverTeam)
-        private val driverCountry = itemView.findViewById<TextView>(R.id.driverCountry)
+        private val driverImage = itemView.findViewById<ImageView>(R.id.driver_photo)
+        private val driverName = itemView.findViewById<TextView>(R.id.driver_name)
+        private val driverTeam = itemView.findViewById<TextView>(R.id.driver_team)
+        private val driverCountry = itemView.findViewById<TextView>(R.id.driver_country)
 
         fun bind(driver: Drivers){
             Glide.with(itemView.context).load(driver.image).into(driverImage)
