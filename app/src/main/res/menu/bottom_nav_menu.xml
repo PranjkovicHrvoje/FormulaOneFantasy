@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Select Driver"
+        android:icon="@drawable/input_icon"
+        android:id="@+id/select"/>
+    <item android:title="Calendar"
+        android:icon="@drawable/calendar_icon"
+        android:id="@+id/calendar"/>
+    <item android:title="Standings"
+        android:icon="@drawable/standings_icon"
+        android:id="@+id/standings"/>
+    <item android:title="Profile"
+        android:icon="@drawable/profile_icon"
+        android:id="@+id/profile"/>
+</menu>
