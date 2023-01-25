@@ -27,13 +27,21 @@ class PlayerRecyclerAdapter(
         return items.size
     }
 
+    fun addItem(player: Player){
+        items.add(player)
+        notifyItemInserted(items.size)
+    }
+
+
     class PlayerViewHolder(itemView: View):
         RecyclerView.ViewHolder(itemView){
         private val player_Name = itemView.findViewById<TextView>(R.id.player_standings_nickname)
+        private val player_Favorite = itemView.findViewById<TextView>(R.id.player_profile_favorite_driver)
         private val player_Points = itemView.findViewById<TextView>(R.id.player_standings_points)
 
         fun bind(player: Player){
             player_Name.text = player.nickname
+            player_Favorite.text = player.favorite
             player_Points.text = player.points.toString()
         }
     }
