@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/profileBackground"
         android:layout_width="0dp"
-        android:layout_height="180dp"
+        android:layout_height="220dp"
         android:background="@drawable/background_rounded_edges"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         android:id="@+id/player_profile_nickname"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="TextView"
         android:textSize="24sp"
@@ -42,7 +42,7 @@
         android:id="@+id/playerProfilePointsStatic"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="@string/points"
         android:textSize="24sp"
@@ -61,4 +61,28 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/playerProfilePointsStatic"
         app:layout_constraintTop_toBottomOf="@+id/player_profile_nickname" />
+
+    <TextView
+        android:id="@+id/favoriteDriverStatic"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerProfilePointsStatic" />
+
+    <TextView
+        android:id="@+id/player_profile_favorite_driver"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/favoriteDriverStatic"
+        app:layout_constraintTop_toBottomOf="@+id/player_profile_points" />
 </androidx.constraintlayout.widget.ConstraintLayout>
