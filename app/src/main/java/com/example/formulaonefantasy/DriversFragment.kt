@@ -37,7 +37,7 @@ class DriversFragment : Fragment() {
                 }
                 driverRecyclerAdapter= DriverRecyclerAdapter(driverList)
                 recyclerView.apply {
-                    LayoutManager = LinearLayoutManager(activity)
+                    layoutManager = LinearLayoutManager(activity)
                     adapter = driverRecyclerAdapter
                 }
             }
@@ -45,7 +45,6 @@ class DriversFragment : Fragment() {
                 Log.e("Error getting drivers", it.message.toString())
             }
 
-        val selectDriverButton = view.findViewById<Button>(R.id.selectDriverButton)
         return view
     }
 }
