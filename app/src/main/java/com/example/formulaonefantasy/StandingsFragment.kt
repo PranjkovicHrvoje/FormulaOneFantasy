@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -23,8 +22,8 @@ class StandingsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_standings, container, false)
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.standings_recycler_view)
+
         db.collection("players").orderBy("points")
             .get()
             .addOnSuccessListener {
@@ -39,7 +38,7 @@ class StandingsFragment : Fragment() {
 
                 playerRecyclerAdapter = PlayerRecyclerAdapter(playerList)
                 recyclerView.apply {
-                    LayoutManager = LinearLayoutManager(activity)
+                    layoutManager = LinearLayoutManager(activity)
                     adapter = playerRecyclerAdapter
                 }
             }
@@ -47,8 +46,6 @@ class StandingsFragment : Fragment() {
             .addOnFailureListener{
                 Log.e("Error getting players.", it.message.toString())
             }
-
-
     return view
     }
 }
