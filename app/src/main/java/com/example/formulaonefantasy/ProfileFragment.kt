@@ -14,7 +14,7 @@ import com.google.firebase.ktx.Firebase
 
 class ProfileFragment : Fragment() {
     private val db = Firebase.firestore
-    private lateinit var profileRecyclerAdapter: PlayerRecyclerAdapter
+    private lateinit var currentUserRecyclerAdapter: CurrentUserRecyclerAdapter
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -27,25 +27,24 @@ class ProfileFragment : Fragment() {
         db.collection("players")
             .get()
             .addOnSuccessListener {
-                val profileList: ArrayList<Player> = ArrayList()
+                val profileList: ArrayList<CurrentUser> = ArrayList()
                 for(data in it.documents){
-                    val profile = data.toObject(Player::class.java)
+                    val profile = data.toObject(CurrentUser::class.java)
                     if(profile!=null){
                         profile.id = data.id
                         profileList.add(profile)
                     }
                 }
-                profileRecyclerAdapter = PlayerRecyclerAdapter(profileList)
+                currentUserRecyclerAdapter = CurrentUserRecyclerAdapter(profileList)
                 recyclerView.apply {
                     layoutManager = LinearLayoutManager(activity)
-                    adapter = profileRecyclerAdapter
+                    adapter = currentUserRecyclerAdapter
                 }
             }
 
             .addOnFailureListener{
                 Log.e("Error getting profile.", it.message.toString() )
             }
-
         return view
     }
 }
