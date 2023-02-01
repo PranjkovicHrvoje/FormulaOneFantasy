@@ -32,11 +32,11 @@
         android:layout_height="35dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/profileBackground"
-        app:layout_constraintTop_toBottomOf="@+id/yourProfileStatic" />
+        app:layout_constraintTop_toBottomOf="@+id/yourProfileStatic"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/playerProfilePointsStatic"
