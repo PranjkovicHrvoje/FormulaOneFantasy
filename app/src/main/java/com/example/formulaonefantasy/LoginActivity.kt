@@ -9,10 +9,14 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var uid: String
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var players: Players
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,5 +70,12 @@ class LoginActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Toast.makeText(baseContext, "Error occurred.", Toast.LENGTH_LONG).show()
             }
+
+        val user = FirebaseAuth.getInstance().currentUser
+        if(user!=null){
+            //function incomplete
+        }else{
+
+        }
     }
 }
