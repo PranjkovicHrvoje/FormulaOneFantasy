@@ -15,28 +15,28 @@ import com.google.firebase.ktx.Firebase
 class StandingsFragment : Fragment() {
         private val db = Firebase.firestore
         private lateinit var playerRecyclerAdapter: PlayerRecyclerAdapter
+
         @SuppressLint("MissingInflatedId")
         override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_standings, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.standings_recycler_view)
 
         db.collection("players").orderBy("points")
             .get()
             .addOnSuccessListener {
-                val playerList: ArrayList<Player> = ArrayList()
+                val playersList: ArrayList<Players> = ArrayList()
                 for(data in it.documents){
-                    val player = data.toObject(Player::class.java)
-                    if(player!=null){
-                        player.id = data.id
-                        playerList.add(player)
+                    val players = data.toObject(Players::class.java)
+                    if(players!=null){
+                        players.id = data.id
+                        playersList.add(players)
                     }
                 }
 
-                playerRecyclerAdapter = PlayerRecyclerAdapter(playerList)
+                playerRecyclerAdapter = PlayerRecyclerAdapter(playersList)
                 recyclerView.apply {
                     layoutManager = LinearLayoutManager(activity)
                     adapter = playerRecyclerAdapter
