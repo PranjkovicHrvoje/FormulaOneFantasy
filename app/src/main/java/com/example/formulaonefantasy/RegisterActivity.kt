@@ -49,25 +49,25 @@ class RegisterActivity : AppCompatActivity() {
             val inputEmail = email.text.toString()
             val inputPassword = password.text.toString()
             val nick: String = inputEmail.substringBefore("@")
-            val newPlayer = Player("", nick, "", 0)
+            val newPlayers = Players("", nick, "", 0)
             auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
                 .addOnCompleteListener(this){task->
                 if(task.isSuccessful){
                     db.collection("players")
-                        .add(newPlayer)
+                        .add(newPlayers)
                         .addOnSuccessListener {
-                            newPlayer.id = it.id
-                            playerRecyclerAdapter.addItem(newPlayer)
+                            newPlayers.id = it.id
+                            playerRecyclerAdapter.addItem(newPlayers)
                         }
                     db.collection("players")
                         .get()
                         .addOnSuccessListener {
-                            val list: ArrayList<Player> = ArrayList()
+                            val list: ArrayList<Players> = ArrayList()
                             for(data in it.documents){
-                                val player = data.toObject(Player::class.java)
-                                if(player!=null){
-                                    player.id = data.id
-                                    list.add(player)
+                                val players = data.toObject(Players::class.java)
+                                if(players!=null){
+                                    players.id = data.id
+                                    list.add(players)
                                 }
                             }
                             playerRecyclerAdapter = PlayerRecyclerAdapter(list)
