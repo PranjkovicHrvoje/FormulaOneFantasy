@@ -3,14 +3,20 @@ package com.example.formulaonefantasy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
+enum class ButtonClickType{
+    SELECT
+}
 
 class DriverRecyclerAdapter(
-    val items: ArrayList<Drivers>
-
+    private val items: ArrayList<Drivers>
     ):RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -35,13 +41,21 @@ class DriverRecyclerAdapter(
         private val driverName = itemView.findViewById<TextView>(R.id.driver_name)
         private val driverTeam = itemView.findViewById<TextView>(R.id.driver_team)
         private val driverCountry = itemView.findViewById<TextView>(R.id.driver_country)
+        private val selectButton = itemView.findViewById<Button>(R.id.selectDriverButton)
 
         fun bind(driver: Drivers){
             Glide.with(itemView.context).load(driver.image).into(driverImage)
             driverName.text = driver.name
             driverTeam.text = driver.team
             driverCountry.text = driver.country
+
+            selectButton.setOnClickListener{
+                var favoriteDriver = driverName
+            }
         }
     }
 
+    interface ContentListener{
+        fun onItemButtonClick(index: Int, driver: Drivers, clickType: ButtonClickType)
+    }
 }
