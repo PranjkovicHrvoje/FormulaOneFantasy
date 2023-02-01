@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class PlayerRecyclerAdapter(
-    private val items: ArrayList<Player>
+    private val items: ArrayList<Players>
 
     ):RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
@@ -27,22 +27,19 @@ class PlayerRecyclerAdapter(
         return items.size
     }
 
-    fun addItem(player: Player){
-        items.add(player)
+    fun addItem(players: Players){
+        items.add(players)
         notifyItemInserted(items.size)
     }
-
 
     class PlayerViewHolder(itemView: View):
         RecyclerView.ViewHolder(itemView){
         private val playerName = itemView.findViewById<TextView>(R.id.player_standings_nickname)
-        private val playerFavorite = itemView.findViewById<TextView>(R.id.player_profile_favorite_driver)
         private val playerPoints = itemView.findViewById<TextView>(R.id.player_standings_points)
 
-        fun bind(player: Player){
-            playerName.text = player.nickname
-            playerFavorite.text = player.favorite
-            playerPoints.text = player.points.toString()
+        fun bind(players: Players){
+            playerName.text = players.nickname
+            playerPoints.text = players.points.toString()
         }
     }
 
