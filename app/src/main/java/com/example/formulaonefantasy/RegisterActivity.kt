@@ -49,7 +49,8 @@ class RegisterActivity : AppCompatActivity() {
             val inputEmail = email.text.toString()
             val inputPassword = password.text.toString()
             val nick: String = inputEmail.substringBefore("@")
-            val newPlayers = Players("", nick, "", 0)
+            val newPlayers = Players("", nick, "", 0, inputEmail)
+
             auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
                 .addOnCompleteListener(this){task->
                 if(task.isSuccessful){
