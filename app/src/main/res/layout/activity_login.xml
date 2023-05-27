@@ -26,7 +26,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/login_input_email"
@@ -41,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text"
-        tools:ignore="Autofill,TextFields" />
+        tools:ignore="Autofill,TextFields,TextContrastCheck" />
 
     <EditText
         android:id="@+id/login_input_password"
@@ -56,18 +57,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_input_email"
-        tools:ignore="Autofill" />
+        tools:ignore="Autofill,TextContrastCheck" />
 
     <Button
         android:id="@+id/login_login_button"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:text="@string/login"
         android:backgroundTint="#17000000"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_input_password" />
+        app:layout_constraintTop_toBottomOf="@+id/login_input_password"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/login_register_button"

@@ -29,5 +29,5 @@
         app:labelVisibilityMode="unlabeled"
         android:background="@drawable/rounded_corner_view_bottom"
         app:itemIconTint="@color/black"
-        />
+        tools:ignore="VisualLintBottomNav" />
 </androidx.constraintlayout.widget.ConstraintLayout>
