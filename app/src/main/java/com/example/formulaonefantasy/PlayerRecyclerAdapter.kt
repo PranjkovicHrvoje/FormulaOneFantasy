@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PlayerRecyclerAdapter(
-    private val items: ArrayList<Players>
 
-    ):RecyclerView.Adapter<RecyclerView.ViewHolder>()
+class PlayerRecyclerAdapter(private val items: ArrayList<Players>):
+    RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return PlayerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.player_standings, parent, false))
@@ -42,5 +41,4 @@ class PlayerRecyclerAdapter(
             playerPoints.text = players.points.toString()
         }
     }
-
 }
