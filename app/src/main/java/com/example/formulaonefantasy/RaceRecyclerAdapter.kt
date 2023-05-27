@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RaceRecyclerAdapter(val items: ArrayList<Race>):
-    RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class RaceRecyclerAdapter(private val items: ArrayList<Race>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return RaceViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.season_schedule, parent, false)
@@ -35,7 +35,7 @@ class RaceRecyclerAdapter(val items: ArrayList<Race>):
         fun bind(race: Race){
             raceName.text = race.name
             trackName.text = race.track
-            raceDate.text = race.date
+            raceDate.text = race.date.toString().substringAfter(" ").substringBefore(":00 GMT")
         }
     }
 }
