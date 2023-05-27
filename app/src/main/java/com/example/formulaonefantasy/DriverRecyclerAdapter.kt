@@ -8,11 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-
 class DriverRecyclerAdapter(private val items: ArrayList<Drivers>):RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return DriverViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.driver_item, parent, false))
+        return DriverViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.driver_item, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -39,8 +40,6 @@ class DriverRecyclerAdapter(private val items: ArrayList<Drivers>):RecyclerView.
             driverName.text = driver.name
             driverTeam.text = driver.team
             driverCountry.text = driver.country
-
         }
     }
-
 }
