@@ -21,12 +21,12 @@
         android:id="@+id/register_input_email"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="75dp"
         android:hint="@string/input_email"
         android:inputType="textPersonName"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerText"
         tools:ignore="Autofill,TextFields" />
@@ -35,7 +35,7 @@
         android:id="@+id/register_btn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#17000000"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="@+id/register_background"
@@ -46,21 +46,21 @@
         android:id="@+id/register_input_password"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="15dp"
         android:hint="@string/input_password"
         android:inputType="textPassword"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_input_email"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_nickname"
         tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/registerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="70dp"
         android:text="@string/register"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -78,5 +78,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_btn" />
+
+    <EditText
+        android:id="@+id/register_input_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/input_nickname"
+        android:inputType="textPersonName"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

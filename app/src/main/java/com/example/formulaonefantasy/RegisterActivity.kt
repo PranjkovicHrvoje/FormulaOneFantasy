@@ -38,56 +38,54 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
-        private fun performSignUp(){
-            val email = findViewById<EditText>(R.id.register_input_email)
-            val password = findViewById<EditText>(R.id.register_input_password)
+    private fun performSignUp(){
+        val email = findViewById<EditText>(R.id.register_input_email)
+        val nick = findViewById<EditText>(R.id.register_input_nickname)
+        val password = findViewById<EditText>(R.id.register_input_password)
 
-            if(email.text.isEmpty() && password.text.isEmpty()){
-                Toast.makeText(this, "Email and password cannot be empty", Toast.LENGTH_LONG).show()
-            }
-
+        if(email.text.isEmpty() && password.text.isEmpty()){
+            Toast.makeText(this, "Email and password cannot be empty", Toast.LENGTH_LONG).show()
+        }
+        else{
             val inputEmail = email.text.toString()
+            val inputNickname = nick.text.toString()
             val inputPassword = password.text.toString()
-            val nick: String = inputEmail.substringBefore("@")
-            val newPlayers = Players("", nick, "", 0, inputEmail)
+            val newPlayers = Players("", inputNickname, "", 0, inputEmail)
 
             auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
                 .addOnCompleteListener(this){task->
-                if(task.isSuccessful){
-                    db.collection("players")
-                        .add(newPlayers)
-                        .addOnSuccessListener {
-                            newPlayers.id = it.id
-                            playerRecyclerAdapter.addItem(newPlayers)
-                        }
-                    db.collection("players")
-                        .get()
-                        .addOnSuccessListener {
-                            val list: ArrayList<Players> = ArrayList()
-                            for(data in it.documents){
-                                val players = data.toObject(Players::class.java)
-                                if(players!=null){
-                                    players.id = data.id
-                                    list.add(players)
-                                }
+                    if(task.isSuccessful){
+                        db.collection("players")
+                            .add(newPlayers)
+                            .addOnSuccessListener {
+                                newPlayers.id = it.id
+                                playerRecyclerAdapter.addItem(newPlayers)
                             }
-                            playerRecyclerAdapter = PlayerRecyclerAdapter(list)
-                        }
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    Toast.makeText(
-                        baseContext, "Success.",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }else{
-                    Toast.makeText(
-                        baseContext, "Authentication failed.",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        db.collection("players")
+                            .get()
+                            .addOnSuccessListener {
+                                val list: ArrayList<Players> = ArrayList()
+                                for(data in it.documents){
+                                    val players = data.toObject(Players::class.java)
+                                    if(players!=null){
+                                        players.id = data.id
+                                        list.add(players)
+                                    }
+                                }
+                                playerRecyclerAdapter = PlayerRecyclerAdapter(list)
+                            }
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        Toast.makeText(
+                            baseContext, "Success.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                 }
-            }
                 .addOnFailureListener{
-                    Toast.makeText(this, "Error occurred.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Please try again", Toast.LENGTH_LONG).show()
                 }
         }
+
+    }
 }
