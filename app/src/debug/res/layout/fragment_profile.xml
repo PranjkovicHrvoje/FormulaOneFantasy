@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/profileBackground"
         android:layout_width="0dp"
-        android:layout_height="220dp"
+        android:layout_height="270dp"
         android:background="@drawable/background_rounded_edges"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,11 +76,46 @@
     <TextView
         android:id="@+id/player_profile_favorite_driver"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/favoriteDriverStatic"
         app:layout_constraintTop_toBottomOf="@+id/player_profile_points" />
+
+    <EditText
+        android:id="@+id/input_fav_driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/input_driver"
+        android:inputType="textPersonName"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favoriteDriverStatic" />
+
+    <Button
+        android:id="@+id/selectDriverButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#17000000"
+        android:text="@string/select"
+        app:layout_constraintStart_toEndOf="@+id/input_fav_driver"
+        app:layout_constraintTop_toBottomOf="@+id/favoriteDriverStatic" />
+
+    <Button
+        android:id="@+id/logOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#B10000"
+        android:text="@string/log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileBackground" />
 </androidx.constraintlayout.widget.ConstraintLayout>
