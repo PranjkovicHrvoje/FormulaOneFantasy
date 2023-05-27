@@ -1,29 +1,33 @@
 package com.example.formulaonefantasy
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class DriversFragment : Fragment() {
+class DriversFragment : Fragment(){
         private val db = Firebase.firestore
         private lateinit var driverRecyclerAdapter: DriverRecyclerAdapter
+        private lateinit var auth: FirebaseAuth
 
+        @SuppressLint("MissingInflatedId", "ResourceType")
         override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_drivers, container, false)
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.drivers_recycler_view)
+        auth = FirebaseAuth.getInstance()
+
+
         db.collection("drivers").orderBy("team")
             .get()
             .addOnSuccessListener {
@@ -45,6 +49,9 @@ class DriversFragment : Fragment() {
                 Log.e("Error getting drivers", it.message.toString())
             }
 
+
+
         return view
     }
+
 }
